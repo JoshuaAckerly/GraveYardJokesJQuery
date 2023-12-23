@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GraveYardJokes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-core-css.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-clean/sm-clean.min.css" rel="stylesheet" type="text/css"/>
+<link href="site.css" rel="stylesheet">
+
+<!-- jQuery --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+<!-- SmartMenus jQuery plugin --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/jquery.smartmenus.min.js" type="text/javascript"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#main-menu').smartmenus();
+		
+		
+		$('.button1').click(function(){
+		$('#square').stop().slideToggle();
+	});
+	$('.button2').click(function(){
+		$('#circle').stop().fadeToggle();
+	});
+	}); // end ready
+
+</script>
+<style>
+#square {
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}
+#circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: brown;
+}
+	#shapes {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	}
+	.container {
+		padding: 2%;
+	}
+</style>
+</head>
+<body>
+<header> <img src="img/GraveYardJokesLogoJester12.5.png" alt="GraveYardJokes Logo" width="20%" height="auto">
+  <h1>GraveYardJokes</h1>
+</header>
+<ul id="main-menu" class="sm sm-clean">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about_us.html">About</a></li>
+  <li><a href="contact_us.html">Contact</a></li>
+  <li><a href="#">Product</a>
+    <ul>
+      <li><a href="gallery.html">Product 1</a></li>
+    </ul>
+  </li>
+</ul>
+<content>
+	<div id="shapes">
+  <div class="container">
+    <div class="center">
+      <div id="square"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="center">
+      <button type="button" class="button1">Button</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="center">
+      <div id="circle"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="center">
+      <button type="button" class="button2">Button</button>
+    </div>
+  </div>
+</div>		
+  <div>
+  </div>
+</content>
+<footer> GraveYardJokes @copyright 2023 </footer>
+</body>
+</html>

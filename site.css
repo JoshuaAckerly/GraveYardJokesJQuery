@@ -1,0 +1,27 @@
+/* CSS Document */
+header, footer{
+	display: flex;
+	justify-content: center;
+	padding: 2% 5%;
+	background-color: darkgreen;
+	color: aquamarine;
+}
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+	background-color: lightblue;
+}
+
+
+h1, #more {
+    text-align: center;
+	padding: 2%;
+}
+
+div p {
+	padding: 4%;
+	background-color: mediumaquamarine
+}

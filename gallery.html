@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-core-css.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-clean/sm-clean.min.css" rel="stylesheet" type="text/css"/>
+<link href="site.css" rel="stylesheet">
+
+<!-- jQuery --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+<!-- SmartMenus jQuery plugin --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/jquery.smartmenus.min.js" type="text/javascript"></script>
+<style>
+.gallery {
+    background-color: darkred;
+    padding: 2%;
+}
+.gallery img {
+    width: 200px;
+    height: 200px;
+}
+	#gallery {
+		display: flex;
+		justify-content: center;
+	}
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script> 
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('.gallery a').attr('data-fancybox', 'mygallery')
+		
+		$('.gallery a').each(function(i){
+			
+			$(this).attr('data-caption', $(this).find('img').attr('alt'));
+			
+			$(this).attr('title', $(this).find('img').attr('alt'));
+			
+		}); // end each
+		
+		$('.gallery a').fancybox();
+		
+		$('#main-menu').smartmenus();
+	}); // end ready
+
+</script>
+</head>
+
+<body>
+<header>
+  <img src="img/GraveYardJokesLogoJester12.5.png" alt="GraveYardJokes Logo" width="20%" height="auto">
+  <h1>GraveYardJokes</h1>
+</header>
+<ul id="main-menu" class="sm sm-clean">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about_us.html">About</a></li>
+  <li><a href="contact_us.html">Contact</a></li>
+  <li><a href="#">Product</a>
+    <ul>
+      <li><a href="gallery.html">Product 1</a></li>
+    </ul>
+  </li>
+</ul>
+<div id="gallery">
+<div class="gallery"> <a href="img/pexels-garrett-morrow-682933600.jpg"> <img src="img/pexels-garrett-morrow-682933600.jpg" alt="game controller on table"> </a> <a href="img/pexels-jeshootscom-442576600.jpg"> <img src="img/pexels-jeshootscom-442576600.jpg" alt="game controller on table"> </a> <a href="img/pexels-lucie-liz-3165335600.jpg"> <img src="img/pexels-lucie-liz-3165335600.jpg" alt="game controller on table"> </a> <a href="img/pexels-marko-blazevic-2708981600.jpg"> <img src="img/pexels-marko-blazevic-2708981600.jpg" alt="game controller on table"> </a> </div>
+</div>
+<footer>
+	GraveYardJokes @copyright 2023</footer>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GraveYardJokes</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-core-css.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-clean/sm-clean.min.css" rel="stylesheet" type="text/css"/>
+<link href="site.css" rel="stylesheet">
+
+<!-- jQuery --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+<!-- SmartMenus jQuery plugin --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/jquery.smartmenus.min.js" type="text/javascript"></script> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#main-menu').smartmenus();
+		
+		
+		$('.button1').click(function(){
+		$('#square').stop().slideToggle();
+	});
+	$('.button2').click(function(){
+		$('#circle').stop().fadeToggle();
+	});
+	}); // end ready
+
+</script>
+</head>
+<body>
+<header> <img src="img/GraveYardJokesLogoJester12.5.png" alt="GraveYardJokes Logo" width="20%" height="auto">
+  <h1>GraveYardJokes</h1>
+</header>
+<ul id="main-menu" class="sm sm-clean">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about_us.html">About</a></li>
+  <li><a href="contact_us.html">Contact</a></li>
+  <li><a href="#">Product</a>
+    <ul>
+      <li><a href="gallery.html">Product 1</a></li>
+    </ul>
+  </li>
+</ul>
+<content>		
+  <div>
+    <p>The purpose of this site is to display my skills in web development and the use of different plugins and JavaScript libraries.  In the home page I have a jQuery navigation menu that will have pop up menus that come from a list of elements pre coded in the design.  From the home page, and each page I have set up, you are able to navigate to each of the pages.  I used different libraries such as jQuery Ui to create some animations that a user will be able to click a button, or click on to perform any functionality that is present.</p>
+	  <p>I used the fonts that I did because I believe they made sense for the overall theme of the website.  A professional clean looking site that is user friendly and uses blues to convey a tone of honesty.  The website features different images that help to tell the story of what the site is about and help to enhance the experience of the user.  </p>
+  </div>
+</content>
+<footer> GraveYardJokes @copyright 2023 </footer>
+</body>
+</html>

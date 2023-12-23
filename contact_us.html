@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript Exercises</title>
+<link href="site.css" rel="stylesheet">
+<style type="text/css">
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cadetblue;
+	width: 60%;
+	padding: 2%;
+}
+	#formBox{
+		display: flex;
+		justify-content: center;
+	}
+#resultsBox {
+    display: flex;
+    justify-content: center;
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-core-css.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/css/sm-clean/sm-clean.min.css" rel="stylesheet" type="text/css"/>
+<link href="site.css" rel="stylesheet">
+
+<!-- jQuery --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+
+<!-- SmartMenus jQuery plugin --> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.smartmenus/1.2.1/jquery.smartmenus.min.js" type="text/javascript"></script> 
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('#main-menu').smartmenus();
+	}); // end ready
+	
+	function validateForm(){
+		//alert("Success!")
+		var name = document.getElementById("name").value;
+		var age = document.getElementById("age").value;
+		if (name == "" || name == null){
+			resultsMsg("Enter your name please");
+		} else {
+			if (age == "" || age == null || isNaN(age))
+				{resultsMsg("Enter a number for your age.");} 
+			else {if(!getSkill()){
+			resultsMsg("Select skill summary.")}
+				  else{
+					resultsMsg("you selected " + getSkill());
+					moreMsg("Thank you for filling out the form!");}
+					}
+				}
+			}
+	function getSkill(){
+		var isChecked=false;
+		var theSelection;
+		var skills = document.getElementsByName("skillset");
+		
+		for (var i = 0; i < skills.length; i++) {
+			if (skills[i].checked) {
+				isChecked = true;
+				theSelection = skills[i].value;
+				break;
+			}
+		}
+		if (isChecked){
+			return theSelection;
+		} else {
+			return false;
+		}
+	}
+	
+	function resultsMsg(s){
+		var resultsBox = document.getElementById("results");
+		resultsBox.innerHTML = s;
+	}
+	
+	function moreMsg(s){
+		var moreBox = document.getElementById("more");
+		moreBox.innerHTML = s;
+	}
+</script>
+</head>
+
+<body>
+<header> <img src="img/GraveYardJokesLogoJester12.5.png" alt="GraveYardJokes Logo" width="20%" height="auto">
+  <h1>GraveYardJokes</h1>
+</header>
+<ul id="main-menu" class="sm sm-clean">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about_us.html">About</a></li>
+  <li><a href="contact_us.html">Contact</a></li>
+  <li><a href="#">Product</a>
+    <ul>
+      <li><a href="gallery.html">Product 1</a></li>
+    </ul>
+  </li>
+</ul>
+<h1>Contact Us</h1>
+<div id="formBox">
+<form name="form1" id="form1" action="" method="post">
+  <label>First Name:
+    <input type="text" id="name" name="name">
+  </label>
+  <br>
+  <label>Your Age: &nbsp;
+    <input type="text" id="age" name="age">
+  </label>
+  <br>
+  <input type="radio" name="skillset" value="designer">
+  Designer<br>
+  <input type="radio" name="skillset" value="devloper">
+  Developer<br>
+  <input type="radio" name="skillset" value="programmer">
+  Programmer<br>
+  <input type="radio" name="skillset" value="aritis">
+  Artists<br>
+  <input type="radio" name="skillset" value="other">
+  Other<br>
+  <input type="button" value="Submit" onClick="validateForm();">
+  &nbsp; &nbsp;
+  <input type="reset" value="Clear Form">
+</form>
+	</div>
+<br>
+<div id="resultsBox">
+  <div id="results"></div>
+</div>
+<br>
+<div id="more">Testing the results</div>
+<footer> GraveYardJokes @copyright 2023 </footer>
+</body>
+</html>
